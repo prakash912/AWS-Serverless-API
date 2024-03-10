@@ -1,0 +1,23 @@
+service: prakash-aws-learn
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+functions:
+  prakashAWShello:
+    handler: hello.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: GET
+  prakashAWSBye:
+    handler: bye.handler
+    events:
+      - httpApi:
+          path: /bye
+          method: GET
+
+  
